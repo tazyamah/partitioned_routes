@@ -8,7 +8,8 @@ This enables define routes in Controller( like `config/routes.rb`).
 ### Example
 
 edit `config/routes.rb`
-    Rtest::Application.routes.draw do
+
+    SomeApp::Application.routes.draw do
       # other routes definition
     
       PartitionedRoutes.define self # <== add this line.
@@ -35,12 +36,6 @@ That's it.
 
     gem 'partitioned_routes', :git => 'git://github.com/tazyamah/partitioned_routes.git'
 
-
-## Restriction
-
-The generated routes can show in `rake routes`!
-
-I have no idea how to fix it. Please tell me!
 
 ## Copyright
 
