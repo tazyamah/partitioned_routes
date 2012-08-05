@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/partitioned_routes.rb",
+    "partitioned_routes.gemspec",
     "test/helper.rb",
     "test/test_partitioned_routes.rb"
   ]
