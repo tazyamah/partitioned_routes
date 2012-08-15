@@ -2,7 +2,7 @@
 
 For Rails 3.
 
-This enables define routes in Controller( like `config/routes.rb`).
+This is enable to define routes in Controller( like `config/routes.rb`).
 
 
 ### Example
