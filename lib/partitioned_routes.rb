@@ -18,15 +18,15 @@ class ActionController::Base
     fullname = name.underscore.match(/(.*)_controller/)[1]
     namespace = File.dirname fullname
     resource_name = File.basename fullname
-    routes do |r|
-      r.resources resource_name, :namespace => namespace
+    routes do
+      resources resource_name, :namespace => namespace
     end
   end
 
   def self.auto_routes
     fullname = name.underscore.match(/(.*)_controller/)[1]
-    routes do |r|
-      r.match "#{fullname}/:action", :controller => fullname
+    routes do
+      match "#{fullname}/:action", :controller => fullname
     end
   end
 end
@@ -35,10 +35,8 @@ module PartitionedRoutes
   def self.define(route)
     require_all_controllers
     return unless ActionController::Base.routes_definitions
-    route.instance_eval do
-      ActionController::Base.routes_definitions.each do |controller_name, routes_definition|
-        routes_definition.call(self)
-      end
+    ActionController::Base.routes_definitions.each do |controller_name, routes_definition|
+      route.instance_eval &routes_definition
     end
   end
 
