@@ -19,8 +19,8 @@ in controller
 
     class SomethingController < ApplicationController
       # ...
-      routes do |r| # this block similer to `config/routes.rb`
-        r.resources :something # same as `resources :something` in `config/routes.rb`
+      routes do # this block same as `config/routes.rb`
+        resources :something # same as `resources :something` in `config/routes.rb`
       end
 
       routes :resources # same as `resources :something`
